@@ -1,0 +1,50 @@
+{% extends 'adminpanel/adminbase.html' %}
+{% load static %}
+{% block title%}About{% endblock %}
+{% block content %}
+
+
+
+<div class="content-wrap">
+
+    <div class="card">
+        {% if messages %}
+        <div class="alert alert-success" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}    
+    <div class="card-title">
+        <h2 class="mb-5 text-center">About</h2>
+    </div>
+    <div class="card-body">
+        <div class="basic-form">
+            <form method="POST" action="{% url 'about_us' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>About Title</label>
+                    <input type="text" name="title" class="form-control" placeholder=" ">
+                </div>
+                <div class="form-group">
+                    <label>Description 1</label>
+                    <textarea name="desc_1" id="desc_1" class="form-control w-100" style="height: 90px"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Description 2</label>
+                    <textarea name="desc_2" id="desc_2" class="form-control w-100" style="height: 90px"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Upload Image</label>
+                    <input type="file" name="about_pic" class="form-control w-100" placeholder="Upload Image">
+                </div>
+                <button type="submit" class="btn btn-default my-3">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock %}

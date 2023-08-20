@@ -1,6 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from adminPanel.models import aboutus
+from django.contrib import messages
+# from django.http import HttpResponseRedirect
+# from django.urls import reverse
+
+
 
 
 def index(request):
@@ -8,6 +14,7 @@ def index(request):
         return render(request, 'adminpanel/index.html')
     else:
         return redirect('login')
+        #return HttpResponseRedirect(reverse('login'))
     
     
 
@@ -50,3 +57,33 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+
+
+def about_us(request):
+    if request.user.is_authenticated:
+        if request.method == 'POST' and request.FILES.get('about_pic'):
+            about_title = request.POST.get('title')
+            about_desc_1 = request.POST.get('desc_1')
+            about_desc_2 = request.POST.get('desc_2')
+            about_pic = request.FILES['about_pic']
+
+
+            about_save = aboutus(
+                about_title = about_title,
+                about_desc_1 = about_desc_1,
+                about_desc_2 = about_desc_2,
+                about_pic  = about_pic
+            )
+            messages.success(request, 'Data Submitted Successfully')
+            about_save.save()
+            return redirect('about_us')
+
+        return render(request, 'adminpanel/about_us.html')
+    else:
+        return redirect('login')
+    
+
+
+def show_about_us(request):
+    pass
