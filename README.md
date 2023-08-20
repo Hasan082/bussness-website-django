@@ -1,1 +1,1 @@
-# Bussness Website Development HTML & Django
+# Business Website Development HTML & Django
