@@ -1,0 +1,85 @@
+{% extends 'adminpanel/adminbase.html' %}
+{% load static %}
+{% block title%}Edit About{% endblock %}
+{% block content %}
+
+<div class="content-wrap">
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 p-r-0 title-margin-right">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h1>Hello, <span>Welcome Here</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# column -->
+                <div class="col-lg-4 p-l-0 title-margin-left">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Edit About</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# column -->
+            </div>
+            <!-- /# row -->
+            <section id="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Bootstrap Data Table </h4>
+                                
+                            </div>
+                            <div class="bootstrap-data-table-panel">
+                                <div class="table-responsive">
+                                    <table id="row-select" class="display table table-borderd table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>SI No</th>
+                                                <th>Title</th>
+                                                <th>About Descript 1</th>
+                                                <th>About Descript 2</th>
+                                                <th>Button Text</th>
+                                                <th>Button URL</th>
+                                                <th>Image</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            {% for i in about_data %}
+                                            print(i.btn_text)
+                                            print(i.btn_text)
+                                            <tr>
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.about_title}}</td>
+                                                <td>{{i.about_desc_1}}</td>
+                                                <td>{{i.about_desc_2}}</td>
+                                                <td>{{ i.about_readmore_btn_text }}</td>
+                                                <td>{{ i.about_readmore_btn_url }}</td>
+                                                <td><img src="/media/{{i.about_pic}}" alt="{{i.about_title}}" style="max-height: 100px; max-width: 100px" class="img-fluid"></td>
+                                                <td class="h4" style="width: 100px;"><a href="{% url 'aboutedit' i.id %}" class="h4"><i class="ti-pencil-alt"></i></a> | <a href="{% url 'about_delete' i.id %}" class="h4"><i class="ti-trash"></i></a></td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <!-- /# row -->
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

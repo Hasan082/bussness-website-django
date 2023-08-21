@@ -60,30 +60,81 @@ def logout_user(request):
 
 
 
-def about_us(request):
+def about_add(request):
     if request.user.is_authenticated:
         if request.method == 'POST' and request.FILES.get('about_pic'):
-            about_title = request.POST.get('title')
-            about_desc_1 = request.POST.get('desc_1')
-            about_desc_2 = request.POST.get('desc_2')
-            about_pic = request.FILES['about_pic']
+            about_title     = request.POST.get('title')
+            about_desc_1    = request.POST.get('desc_1')
+            about_desc_2    = request.POST.get('desc_2')
+            btn_text        = request.POST.get('btn_text')
+            btn_url         = request.POST.get('btn_url')
+            about_pic       = request.FILES['about_pic']
 
 
             about_save = aboutus(
-                about_title = about_title,
-                about_desc_1 = about_desc_1,
-                about_desc_2 = about_desc_2,
-                about_pic  = about_pic
+                about_title     = about_title,
+                about_desc_1    = about_desc_1,
+                about_desc_2    = about_desc_2,
+                btn_text        =  btn_text,
+                btn_url         = btn_url,
+                about_pic       = about_pic
             )
+
             messages.success(request, 'Data Submitted Successfully')
             about_save.save()
-            return redirect('about_us')
+            return redirect('aboutadd')
 
-        return render(request, 'adminpanel/about_us.html')
+        return render(request, 'adminpanel/about-add.html')
     else:
         return redirect('login')
     
 
 
-def show_about_us(request):
-    pass
+def about_show(request):
+    if request.user.is_authenticated:
+        about_data = aboutus.objects.all()
+        return render(request, 'adminpanel/aboutshow.html', {'about_data':about_data})
+    else:
+        return redirect('login')
+    
+
+def aboutedit(request, id):
+    about_edit = aboutus.objects.filter(id = id)
+    return render(request, 'adminpanel/aboutedit.html', {'about_edit': about_edit})
+
+
+def updatedata(request, id):
+    if request.user.is_authenticated:
+        if request.method == 'POST' and request.FILES.get('about_pic'):
+            about_title     = request.POST.get('title')
+            about_desc_1     = request.POST.get('desc_1')
+            about_desc_2     = request.POST.get('desc_2')
+            btn_text        = request.POST.get('btn_text')
+            btn_url         = request.POST.get('btn_url')
+            about_pic       = request.FILES['about_pic']
+
+            about_save = aboutus.objects.filter(id=id)
+
+            about_save = aboutus(
+                id=id,
+                about_title = about_title,
+                about_desc_1 = about_desc_1,
+                about_desc_2 = about_desc_2,
+                btn_text = btn_text,
+                btn_url = btn_url,
+                about_pic  = about_pic
+            )
+            messages.success(request, 'Data Updated Successfully')
+            about_save.save()
+            return redirect('aboutadd')
+
+        return render(request, 'adminpanel/aboutshow.html')
+    else:
+        return redirect('login')
+
+
+
+def about_delete(request, id):
+    delete = aboutus.objects.filter(id=id).delete()
+    # messages.error(request, "Task Deleted successfully")
+    return redirect('aboutshow')

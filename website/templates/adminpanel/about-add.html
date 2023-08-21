@@ -20,7 +20,7 @@
     </div>
     <div class="card-body">
         <div class="basic-form">
-            <form method="POST" action="{% url 'about_us' %}" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'aboutadd' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
                     <label>About Title</label>
@@ -33,6 +33,14 @@
                 <div class="form-group">
                     <label>Description 2</label>
                     <textarea name="desc_2" id="desc_2" class="form-control w-100" style="height: 90px"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Button Text</label>
+                    <input type="text" name="btn_text" class="form-control" placeholder=" ">
+                </div>
+                <div class="form-group">
+                    <label>Button URL</label>
+                    <input type="text" name="btn_url" class="form-control" placeholder=" ">
                 </div>
                 <div class="form-group">
                     <label>Upload Image</label>
