@@ -1,6 +1,8 @@
 {% extends 'frontend/base.html' %}
 {% load static %}
+{% load custom_filters %}
 {% block content %}
+
 
 
 
@@ -40,19 +42,19 @@
 		<div class="row">
 			<div class="col-lg-4 col-md-6 align-self-center">
 				<div class="image-block bg-about">
-					<img class="img-fluid" src="{% static 'frontend/images/speakers/featured-speaker.jpg' %}" alt="">
+					<img class="img-fluid" src="/media/{{about_us.about_pic}}" alt="">
 				</div>
 			</div>
 			<div class="col-lg-8 col-md-6 align-self-center">
 				<div class="content-block">
-					<h2>{{first_part}}<span class="alternate">{{last_word_result}}</span></h2>
+					<h2>{{first_part}}<span class="alternate"> {{last_word_result}}</span></h2>
 					<div class="description-one">
 						<p>
-							{{about_us.about_desc_1}}
+							{{ about_us.about_desc_1|truncate_and_ellipsis:200 }}
 						</p>
 					</div>
 					<div class="description-two">
-						<p>{{about_us.about_desc_2}}</p>
+						<p>{{ about_us.about_desc_2|truncate_and_ellipsis:200 }}</p>
 					</div>
 					<ul class="list-inline">
 						<li class="list-inline-item">

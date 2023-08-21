@@ -10,5 +10,6 @@ urlpatterns = [
     path('about-add', views.about_add, name="aboutadd"),
     path('about-show', views.about_show, name="aboutshow"),
     path('about-edit/<int:id>/edit', views.aboutedit, name='aboutedit'),
+    path('about-update/<int:id>/', views.aboutupdate, name='aboutupdate'),
     path('about-delete/<int:id>/delete', views.about_delete, name='about_delete'),   
 ]

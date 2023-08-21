@@ -21,7 +21,7 @@
         <div class="card-body">
             <div class="basic-form">
                 {% for i in about_edit %}
-                <form method="POST" action="{% url 'aboutadd' %}" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'aboutupdate' i.id %}" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
                         <label>About Title</label>

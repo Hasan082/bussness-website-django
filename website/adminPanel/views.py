@@ -75,7 +75,7 @@ def about_add(request):
                 about_title     = about_title,
                 about_desc_1    = about_desc_1,
                 about_desc_2    = about_desc_2,
-                btn_text        =  btn_text,
+                btn_text        = btn_text,
                 btn_url         = btn_url,
                 about_pic       = about_pic
             )
@@ -103,7 +103,7 @@ def aboutedit(request, id):
     return render(request, 'adminpanel/aboutedit.html', {'about_edit': about_edit})
 
 
-def updatedata(request, id):
+def aboutupdate(request, id):
     if request.user.is_authenticated:
         if request.method == 'POST' and request.FILES.get('about_pic'):
             about_title     = request.POST.get('title')
@@ -120,15 +120,14 @@ def updatedata(request, id):
                 about_title = about_title,
                 about_desc_1 = about_desc_1,
                 about_desc_2 = about_desc_2,
-                btn_text = btn_text,
-                btn_url = btn_url,
+                about_readmore_btn_text = btn_text,
+                about_readmore_btn_url = btn_url,
                 about_pic  = about_pic
-            )
-            messages.success(request, 'Data Updated Successfully')
+            )            
             about_save.save()
-            return redirect('aboutadd')
+            messages.success(request, 'Data Updated Successfully')
+            return redirect('aboutshow')
 
-        return render(request, 'adminpanel/aboutshow.html')
     else:
         return redirect('login')
 

@@ -1,3 +1,359 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block title%}About{% endblock %}
 {% block content %}
 
+
+<!--================================
+=            Page Title            =
+=================================-->
+
+<section class="page-title bg-title overlay-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="title">
+                    <h3>About Us</h3>
+                </div>
+                <ol class="breadcrumb justify-content-center p-0 m-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">About US</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====  End of Page Title  ====-->
+
+
+<!--===========================
+=            About            =
+============================-->
+
+<section class="section about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 align-self-center">
+                <div class="image-block bg-about">
+                    <img class="img-fluid" src="/media/{{about_us.about_pic}}" alt="{{about_us.about_title}}">
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-6 align-self-center">
+                
+                <div class="content-block">
+                    <h2>{{first_part}}<span class="alternate"> {{last_word_result}}</span></h2>
+                    <div class="description-one">
+                        <p>
+                            {{about_us.about_desc_1}}
+                        </p>
+                    </div>
+                    <div class="description-two">
+                        <p>{{about_us.about_desc_2}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====  End of About  ====-->
+
+<!--==============================
+=            Speakers            =
+===============================-->
+
+<section class="section speakers bg-speaker overlay-lighter">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Section Title -->
+                <div class="section-title white">
+                    <h3>Who <span class="alternate">Speaking?</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusm tempor incididunt ut labore
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <!-- Speaker 1 -->
+                <div class="speaker-item">
+                    <div class="image">
+                        <img src="images/speakers/speaker-one.jpg" alt="speaker" class="img-fluid">
+                        <div class="primary-overlay"></div>
+                        <div class="socials">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content text-center">
+                        <h5><a href="single-speaker.html">Johnathan Franco</a></h5>
+                        <p>Project Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <!-- Speaker 2 -->
+                <div class="speaker-item">
+                    <div class="image">
+                        <img src="images/speakers/speaker-two.jpg" alt="speaker" class="img-fluid">
+                        <div class="primary-overlay"></div>
+                        <div class="socials">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content text-center">
+                        <h5><a href="single-speaker.html">Johnathan Franco</a></h5>
+                        <p>Project Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <!-- Speaker 3 -->
+                <div class="speaker-item">
+                    <div class="image">
+                        <img src="images/speakers/speaker-three.jpg" alt="speaker" class="img-fluid">
+                        <div class="primary-overlay"></div>
+                        <div class="socials">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content text-center">
+                        <h5><a href="single-speaker.html">Johnathan Franco</a></h5>
+                        <p>Project Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <!-- Speaker 4 -->
+                <div class="speaker-item">
+                    <div class="image">
+                        <img src="images/speakers/speaker-four.jpg" alt="speaker" class="img-fluid">
+                        <div class="primary-overlay"></div>
+                        <div class="socials">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content text-center">
+                        <h5><a href="single-speaker.html">Johnathan Franco</a></h5>
+                        <p>Project Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <!-- Speaker 5 -->
+                <div class="speaker-item">
+                    <div class="image">
+                        <img src="images/speakers/speaker-five.jpg" alt="speaker" class="img-fluid">
+                        <div class="primary-overlay"></div>
+                        <div class="socials">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content text-center">
+                        <h5><a href="single-speaker.html">Johnathan Franco</a></h5>
+                        <p>Project Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <!-- Speaker 1 -->
+                <div class="speaker-item">
+                    <div class="image">
+                        <img src="images/speakers/speaker-six.jpg" alt="speaker" class="img-fluid">
+                        <div class="primary-overlay"></div>
+                        <div class="socials">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content text-center">
+                        <h5><a href="single-speaker.html">Johnathan Franco</a></h5>
+                        <p>Project Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <!-- Speaker 7 -->
+                <div class="speaker-item">
+                    <div class="image">
+                        <img src="images/speakers/speaker-five.jpg" alt="speaker" class="img-fluid">
+                        <div class="primary-overlay"></div>
+                        <div class="socials">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content text-center">
+                        <h5><a href="single-speaker.html">Johnathan Franco</a></h5>
+                        <p>Project Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <!-- Speaker 8 -->
+                <div class="speaker-item">
+                    <div class="image">
+                        <img src="images/speakers/speaker-six.jpg" alt="speaker" class="img-fluid">
+                        <div class="primary-overlay"></div>
+                        <div class="socials">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="content text-center">
+                        <h5><a href="single-speaker.html">Johnathan Franco</a></h5>
+                        <p>Project Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====  End of Speakers  ====-->
+
+
+<!--=================================
+=            Testimonial            =
+==================================-->
+
+<section class="section testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3>What People <span class="alternate">Say?</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti aliquid vero harum rerum
+                        voluptates, ab, ullam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-20">
+            <div class="col-lg-4 col-md-6">
+                <!-- Testimonial -->
+                <div class="testimonial-item">
+                    <!-- Given Comment -->
+                    <div class="comment">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis voluptate modi sunt
+                            placeat in vel illo dolorem, atque maxime voluptates optio fugit iure cum ipsa quo quaerat!
+                            Veritatis, modi. Laudantium provident deleniti earum voluptas delectus, labore dolor dolorem
+                            amet expedita.</p>
+                    </div>
+                    <div class="person">
+                        <div class="media">
+                            <!-- Person Image -->
+                            <img src="images/speakers/speaker-thumb-three.jpg" alt="person-image">
+                            <div class="media-body">
+                                <!-- Person Name -->
+                                <div class="name">
+                                    <p>Espen Brunberg</p>
+                                </div>
+                                <!-- Profession -->
+                                <div class="profession">
+                                    <p>Web Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <!-- Testimonial -->
+                <div class="testimonial-item">
+                    <!-- Given Comment -->
+                    <div class="comment">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis voluptate modi sunt
+                            placeat in vel illo dolorem, atque maxime voluptates optio fugit iure cum ipsa quo quaerat!
+                            Veritatis, modi. Laudantium provident deleniti earum voluptas delectus, labore dolor dolorem
+                            amet expedita.</p>
+                    </div>
+                    <div class="person">
+                        <div class="media">
+                            <!-- Person Image -->
+                            <img src="images/speakers/speaker-thumb-one.jpg" alt="person-image">
+                            <div class="media-body">
+                                <!-- Person Name -->
+                                <div class="name">
+                                    <p>Kaite Stricker</p>
+                                </div>
+                                <!-- Profession -->
+                                <div class="profession">
+                                    <p>Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mx-auto">
+                <!-- Testimonial -->
+                <div class="testimonial-item">
+                    <!-- Given Comment -->
+                    <div class="comment">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis voluptate modi sunt
+                            placeat in vel illo dolorem, atque maxime voluptates optio fugit iure cum ipsa quo quaerat!
+                            Veritatis, modi. Laudantium provident deleniti earum voluptas delectus, labore dolor dolorem
+                            amet expedita.</p>
+                    </div>
+                    <div class="person">
+                        <div class="media">
+                            <!-- Person Image -->
+                            <img src="images/speakers/speaker-thumb-five.jpg" alt="person-image">
+                            <div class="media-body">
+                                <!-- Person Name -->
+                                <div class="name">
+                                    <p>Adam Smith</p>
+                                </div>
+                                <!-- Profession -->
+                                <div class="profession">
+                                    <p>Web Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====  End of Testimonial  ====-->
 {% endblock %}
