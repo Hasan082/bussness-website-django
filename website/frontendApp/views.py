@@ -33,4 +33,5 @@ def about(request):
         "last_word_result": last_word_result,
         "about_us": about_us,
     }
+    
     return render(request, 'frontend/about.html', context)

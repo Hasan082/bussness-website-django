@@ -1,5 +1,6 @@
 from django.urls import path
 from adminPanel import views
+from adminPanel.allviews import homeviews
 
 
 urlpatterns = [
@@ -11,5 +12,6 @@ urlpatterns = [
     path('about-show', views.about_show, name="aboutshow"),
     path('about-edit/<int:id>/edit', views.aboutedit, name='aboutedit'),
     path('about-update/<int:id>/', views.aboutupdate, name='aboutupdate'),
-    path('about-delete/<int:id>/delete', views.about_delete, name='about_delete'),   
+    path('about-delete/<int:id>/delete', views.about_delete, name='about_delete'),
+    path('speaker/', homeviews.homespeaker, name='homespeaker' ),
 ]
